@@ -15,9 +15,25 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Impact Investing Group at USC",
+  title: {
+    default: "Impact Investing Group at USC",
+    template: "%s — Impact Investing Group at USC",
+  },
   description:
-    "Fund Ideas. Forge Futures. Fuel Social Change. USC's premier impact investing organization.",
+    "Fund Ideas. Forge Futures. Fuel Social Change. USC's premier impact investing organization offering consulting, microfinance, and research.",
+  openGraph: {
+    title: "Impact Investing Group at USC",
+    description: "Fund Ideas. Forge Futures. Fuel Social Change.",
+    url: "https://www.usciig.org",
+    siteName: "IIG at USC",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Impact Investing Group at USC",
+    description: "Fund Ideas. Forge Futures. Fuel Social Change.",
+  },
 };
 
 export default function RootLayout({
