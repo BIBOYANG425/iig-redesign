@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Hero } from "@/components/hero";
+import HeroPremium from "@/components/hero-premium";
 import { SocialProof } from "@/components/social-proof";
 import { SectionHeading } from "@/components/section-heading";
+import "@/styles/hero-premium.css";
 
 const caseStudies = [
   {
@@ -31,7 +32,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <Hero />
+      <HeroPremium />
 
       {/* Social Proof */}
       <SocialProof />
