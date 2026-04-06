@@ -103,12 +103,12 @@ function Dropdown({
       </button>
 
       {isOpen && (
-        <div className="absolute left-1/2 top-full z-50 mt-2 min-w-[200px] -translate-x-1/2 border border-muted/20 bg-surface p-2 shadow-lg">
+        <div className="absolute left-1/2 top-full z-50 mt-2 min-w-[220px] -translate-x-1/2 border border-muted/20 bg-surface p-3 shadow-lg">
           {item.children!.map((child) => (
             <Link
               key={child.href}
               href={child.href}
-              className="block px-4 py-2.5 text-sm text-muted transition-colors hover:bg-muted/10 hover:text-cream"
+              className="block px-4 py-3 text-sm text-muted transition-colors hover:bg-muted/10 hover:text-cream"
               onClick={onClose}
             >
               {child.label}
