@@ -14,7 +14,7 @@ const services = [
   {
     title: "Microfinance — Kiva Trustee Partner",
     description:
-      "IIG is an official Kiva trustee partner, providing 0% interest microloans to small business owners across Los Angeles who lack access to traditional capital. Our analysts conduct due diligence on borrowers, assess lending opportunities, and manage the full loan lifecycle from application through repayment. We have funded entrepreneurs like Phelipe of PHresh Juice Bar — a South LA founder who received a $10,500 loan to secure a ghost kitchen and bring organic cold-pressed juice to his community. Through Kiva's platform, every dollar lent is crowdfunded by individual lenders worldwide, creating a direct bridge between global capital and local impact.",
+      "IIG is an official Kiva trustee partner, providing 0% interest microloans to small business owners across Los Angeles who lack access to traditional capital. Our analysts conduct due diligence on borrowers, assess lending opportunities, and manage the full loan lifecycle from application through repayment. Through Kiva's platform, every dollar lent is crowdfunded by individual lenders worldwide, creating a direct bridge between global capital and local impact.",
   },
   {
     title: "Research",
