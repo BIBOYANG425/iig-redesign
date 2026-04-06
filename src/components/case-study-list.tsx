@@ -9,7 +9,7 @@ const caseStudies = [
     tag: "Market Research",
     client: "LASIF",
     summary:
-      "Conducted comprehensive market research to identify growth opportunities and evaluate the competitive landscape for the Los Angeles Social Innovation Fund.",
+      "Delivered a 40-page market landscape analysis identifying three untapped funding verticals for the Los Angeles Social Innovation Fund.",
     href: "/clients/case-studies",
   },
   {
@@ -17,15 +17,15 @@ const caseStudies = [
     tag: "Data Analysis",
     client: "PS Science",
     summary:
-      "Delivered data-driven insights and performance analysis to help PS Science measure and scale their educational impact across underserved communities.",
+      "Built a performance measurement framework tracking educational outcomes across 12 underserved school districts for PS Science.",
     href: "/clients/case-studies",
   },
   {
     number: "03",
-    tag: "Market Entry",
+    tag: "Go-to-Market Strategy",
     client: "Company Volunteer Day",
     summary:
-      "Developed a market entry strategy and go-to-market plan for a social enterprise connecting corporations with meaningful volunteer opportunities.",
+      "Developed a market entry strategy and pricing model for a platform connecting corporations with high-impact volunteer programs.",
     href: "/clients/case-studies",
   },
 ];
@@ -71,7 +71,9 @@ export function CaseStudyList() {
               {caseStudies[hovered].summary}
             </p>
           ) : (
-            <p className="text-sm text-muted/40">Hover a project to preview</p>
+            <p className="text-sm text-muted/40">
+              Select an engagement to preview
+            </p>
           )}
         </div>
       </div>

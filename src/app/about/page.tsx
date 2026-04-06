@@ -29,8 +29,8 @@ export default function AboutPage() {
               intersection of business and social impact.
             </p>
             <p>
-              Our mission is to educate the next generation of leaders in impact
-              investing&mdash;equipping students with the analytical rigor,
+              Our mission is to train the next generation of impact-focused
+              analysts&mdash;equipping them with the analytical rigor,
               strategic thinking, and hands-on experience needed to allocate
               capital toward measurable social and environmental outcomes. Through
               pro-bono consulting, microfinance advisory, and original research,

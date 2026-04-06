@@ -20,10 +20,11 @@ export const metadata: Metadata = {
     template: "%s — Impact Investing Group at USC",
   },
   description:
-    "Fund Ideas. Forge Futures. Fuel Social Change. USC's premier impact investing organization offering consulting, microfinance, and research.",
+    "Fund Ideas. Forge Futures. Fuel Social Change. USC's premier impact investing organization delivering pro-bono consulting, financial modeling, and research to social enterprises.",
   openGraph: {
     title: "Impact Investing Group at USC",
-    description: "Fund Ideas. Forge Futures. Fuel Social Change.",
+    description:
+      "Fund Ideas. Forge Futures. Fuel Social Change. Pro-bono consulting and research for LA social enterprises.",
     url: "https://www.usciig.org",
     siteName: "IIG at USC",
     locale: "en_US",
@@ -32,7 +33,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Impact Investing Group at USC",
-    description: "Fund Ideas. Forge Futures. Fuel Social Change.",
+    description:
+      "Fund Ideas. Forge Futures. Fuel Social Change. Pro-bono consulting and research for LA social enterprises.",
   },
 };
 

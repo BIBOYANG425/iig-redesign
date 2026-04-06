@@ -28,7 +28,9 @@
   }
 
   /* All page sections sit above the fixed scroll-globe */
-  section {
+  section,
+  footer,
+  nav {
     position: relative;
     z-index: 1;
   }

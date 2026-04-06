@@ -42,10 +42,10 @@ export function ImpactPaloozaMarquee() {
           Flagship Event
         </p>
         <p className="mt-4 max-w-2xl text-lg text-muted">
-          Our annual showcase where student teams present their consulting
-          deliverables to clients, faculty, and the broader USC community.
-          Impact Palooza celebrates a semester of rigorous work and real-world
-          social impact.
+          Each semester ends with analyst teams presenting final deliverables
+          directly to clients and faculty judges. Impact Palooza is where a
+          semester of rigorous analysis becomes a professional recommendation
+          deck.
         </p>
         <Link
           href="/impact-palooza"
