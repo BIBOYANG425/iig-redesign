@@ -6,6 +6,14 @@ export const metadata: Metadata = {
 
 const values = [
   {
+    statement: "Change starts at the roots.",
+    body: "We believe that the most profound global transformations begin with local, grassroots action. As a Kiva Trustee Partner, we are committed to empowering communities from the ground up — funding entrepreneurs in Los Angeles who lack access to traditional capital, and proving that sustainable change scales from the bottom up.",
+  },
+  {
+    statement: "Nature as a stakeholder.",
+    body: "We recognize that all economic activity is ultimately derived from the natural world. True sustainable growth requires treating the planet's energy and ecosystems as essential partners, not infinite resources. Every strategy we build accounts for the world we share.",
+  },
+  {
     statement: "Real work, not resume padding.",
     body: "Every project we take on has a real client with a real problem. Our analysts don't simulate consulting — they do it. The work matters, and so does the quality we bring to it.",
   },
@@ -23,7 +31,7 @@ const values = [
   },
   {
     statement: "Bridge finance and purpose.",
-    body: "Capital is a tool. Directed thoughtfully, it can solve some of the world's most pressing challenges. We train the next generation of leaders to invest with intention and impact.",
+    body: "Capital is a tool. Directed thoughtfully, it can solve some of the world's most pressing challenges. We train the next generation of leaders to invest with intention and impact — connecting human development with the energy of the natural world.",
   },
 ];
 
@@ -36,6 +44,10 @@ export default function ValuesPage() {
           <h1 className="font-serif text-5xl font-bold text-white md:text-6xl">
             Our Values
           </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
+            We believe global change starts at the grassroots. These principles
+            guide every engagement, every loan, and every strategy we deliver.
+          </p>
         </div>
       </section>
 

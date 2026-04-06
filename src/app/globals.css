@@ -12,6 +12,14 @@
   --color-surface: #0B0B33;
   --color-muted: #7A7AB0;
 
+  /* Extended palette — Earth & Space narrative */
+  --color-gold: #D9A621;
+  --color-gold-light: #F0C850;
+  --color-cyan: #33CCCC;
+  --color-cyan-dark: #1A9999;
+  --color-violet: #7A3FBF;
+  --color-violet-light: #9966E6;
+
   --font-serif: var(--font-playfair), serif;
   --font-sans: var(--font-inter), sans-serif;
 }

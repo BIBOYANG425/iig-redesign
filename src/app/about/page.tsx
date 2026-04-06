@@ -13,6 +13,9 @@ export default function AboutPage() {
           <h1 className="font-serif text-5xl font-bold text-white md:text-6xl">
             Impact Investing at USC
           </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
+            Rooted locally. Empowering humanity. Financing the future.
+          </p>
         </div>
       </section>
 
@@ -23,28 +26,30 @@ export default function AboutPage() {
           <div className="space-y-6 text-text-muted leading-relaxed">
             <p>
               Founded in 2018, the Impact Investing Group at USC was born from a
-              simple conviction: finance should be a force for good. What started
-              as a small cohort of students passionate about social enterprise has
+              simple conviction: global change starts at the grassroots, and
+              finance should be the tool that makes it possible. What started as
+              a small cohort of students passionate about social enterprise has
               grown into one of USC&rsquo;s most active organizations at the
-              intersection of business and social impact.
+              intersection of human development, natural energy, and sustainable
+              growth.
             </p>
             <p>
               Our mission is to train the next generation of impact-focused
-              analysts&mdash;equipping them with the analytical rigor,
-              strategic thinking, and hands-on experience needed to allocate
-              capital toward measurable social and environmental outcomes. Through
-              pro-bono consulting, microfinance advisory, and original research,
-              our members gain real-world experience while creating tangible value
-              for mission-driven organizations across Los Angeles.
+              analysts&mdash;equipping them with the analytical rigor, strategic
+              thinking, and hands-on experience needed to allocate capital toward
+              measurable social and environmental outcomes. As an official Kiva
+              Trustee Partner, we don&rsquo;t just study impact investing&mdash;we
+              practice it, deploying real capital to real entrepreneurs in Los
+              Angeles who lack access to traditional financial systems.
             </p>
             <p>
               At its core, IIG bridges finance and purpose. We believe that
-              rigorous analysis and social impact are not mutually exclusive, and
-              that the best way to learn is by doing meaningful work for real
-              clients. Every semester, our analysts tackle complex challenges
-              alongside social enterprises, nonprofits, and impact funds&mdash;
-              developing professional skills that prepare them for careers in
-              consulting, investment management, social enterprise, and beyond.
+              sustainability, human development, and the energy of the natural
+              world are inseparable&mdash;and that the most meaningful change
+              scales from the ground up. Every semester, our analysts tackle
+              complex challenges alongside social enterprises, nonprofits, and
+              impact funds, developing professional skills while proving that
+              grassroots action can have global resonance.
             </p>
           </div>
 

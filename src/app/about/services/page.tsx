@@ -9,17 +9,17 @@ const services = [
   {
     title: "Consulting",
     description:
-      "Our consulting teams work directly with social enterprises and mission-driven organizations across Los Angeles. From market research and competitive analysis to go-to-market strategy and financial modeling, we deliver actionable recommendations grounded in rigorous analysis. Each engagement is scoped like a professional consulting project, giving our analysts hands-on experience while creating real value for clients.",
+      "Our consulting teams work directly with social enterprises and mission-driven organizations across Los Angeles. We deliver rigorous, semester-long engagements — from market sizing and competitive analysis to go-to-market strategy and financial modeling — designed to align grassroots human development with sustainable global growth. Each project is scoped like a professional consulting engagement, creating real value for clients while training the next generation of impact-driven leaders.",
   },
   {
     title: "Microfinance — Kiva Trustee Partner",
     description:
-      "IIG is an official Kiva trustee partner, providing 0% interest microloans to small business owners across Los Angeles who lack access to traditional capital. Our analysts conduct due diligence on borrowers, assess lending opportunities, and manage the full loan lifecycle from application through repayment. Through Kiva's platform, every dollar lent is crowdfunded by individual lenders worldwide, creating a direct bridge between global capital and local impact.",
+      "As an official Kiva Trustee Partner, IIG is on the ground in Los Angeles, vetting and funding small business owners who lack access to traditional capital. This is where our grassroots philosophy becomes operational. Our analysts conduct due diligence on borrowers, assess lending opportunities, and manage the full loan lifecycle from application through repayment. Through Kiva's platform, every dollar lent is crowdfunded by individual lenders worldwide — creating a direct bridge between global capital and local human development. This is where global change begins.",
   },
   {
     title: "Research",
     description:
-      "Our research division publishes original analysis on impact investing trends, ESG frameworks, and social enterprise performance. Research teams dive deep into thematic areas such as climate finance, education equity, and community development — producing white papers and data-driven insights that inform both our internal strategy and the broader impact investing community.",
+      "Our research division publishes original analysis at the intersection of human development, natural energy, and sustainable markets. Research teams dive deep into thematic areas such as climate finance, education equity, renewable energy, and community development — producing white papers and data-driven insights that map the future of impact investing. We believe that understanding the relationship between nature, energy, and human progress is essential to directing capital where it matters most.",
   },
 ];
 
@@ -32,6 +32,11 @@ export default function ServicesPage() {
           <h1 className="font-serif text-5xl font-bold text-white md:text-6xl">
             Our Services
           </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
+            We believe change starts at the grassroots. Our three service lines
+            — consulting, microfinance, and research — work together to connect
+            human development with sustainable growth.
+          </p>
         </div>
       </section>
 

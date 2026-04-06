@@ -8,13 +8,21 @@ const CobeGlobe = dynamic(() => import("./cobe-globe"), { ssr: false });
 export default function ScrollGlobe() {
   const { scrollYProgress } = useScroll();
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 2.5]);
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  // Scale: starts at 1, grows to 2.5 as user scrolls — epic zoom effect
+  const scale = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.65, 0.8, 1], [1, 1.3, 1.6, 1.2, 2.0, 2.5]);
+
+  // Horizontal movement: globe drifts left as user scrolls deeper
+  const x = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.8, 1], ["0%", "-5%", "-20%", "-10%", "-15%"]);
+
+  // Vertical movement: subtle vertical shift per section
+  const y = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.65, 1], ["0%", "5%", "0%", "10%", "15%"]);
+
+  // Opacity: globe fades slightly in the footer region
+  const opacity = useTransform(scrollYProgress, [0, 0.85, 1], [1, 1, 0.6]);
 
   return (
     <div className="scroll-globe">
-      <motion.div className="scroll-globe__inner" style={{ scale, x, y }}>
+      <motion.div className="scroll-globe__inner" style={{ scale, x, y, opacity }}>
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
