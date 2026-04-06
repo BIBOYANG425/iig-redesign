@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { CanvasErrorBoundary } from "./error-boundary";
 
 const PixelBlast = dynamic(() => import("./pixel-blast"), { ssr: false });
 
@@ -39,7 +40,9 @@ export default function HeroPremium() {
   return (
     <section ref={sectionRef} className="hero-premium">
       <div className="hero-premium__bg">
-        <PixelBlast />
+        <CanvasErrorBoundary>
+          <PixelBlast />
+        </CanvasErrorBoundary>
       </div>
 
       <div className="hero-premium__content">

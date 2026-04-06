@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { ImpactPaloozaMarquee } from "@/components/impact-palooza-marquee";
 import { CaseStudyList } from "@/components/case-study-list";
+import { CanvasErrorBoundary } from "@/components/error-boundary";
 import "@/styles/hero-premium.css";
 
 const services = [
@@ -33,7 +34,9 @@ export default function Home() {
   return (
     <>
       {/* Fixed globe — scales across entire page scroll */}
-      <ScrollGlobe />
+      <CanvasErrorBoundary>
+        <ScrollGlobe />
+      </CanvasErrorBoundary>
 
       {/* Hero */}
       <HeroPremium />
@@ -57,7 +60,7 @@ export default function Home() {
               <Link
                 key={service.name}
                 href={service.href}
-                className="group flex items-center justify-between border-b border-muted/20 py-6 transition-colors hover:bg-muted/5"
+                className="group flex items-center justify-between border-b border-muted/20 py-6 transition-colors hover:bg-muted/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:bg-muted/5"
               >
                 <div>
                   <h3 className="font-serif text-2xl font-semibold text-cream">
@@ -67,7 +70,7 @@ export default function Home() {
                     {service.description}
                   </p>
                 </div>
-                <span className="text-green opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-100">
+                <span className="text-green opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-100 group-focus-visible:translate-x-2 group-focus-visible:opacity-100">
                   →
                 </span>
               </Link>

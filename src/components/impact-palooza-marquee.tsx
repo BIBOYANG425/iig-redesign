@@ -1,19 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export function ImpactPaloozaMarquee() {
+  const prefersReducedMotion = useReducedMotion();
   const text = "IMPACT PALOOZA \u00A0\u00B7\u00A0 ";
   const repeated = text.repeat(6);
 
   return (
     <section className="overflow-hidden bg-surface py-24">
       {/* Marquee */}
-      <div className="relative">
+      <div className="relative" aria-hidden="true">
         <motion.div
           className="flex whitespace-nowrap"
-          animate={{ x: ["0%", "-50%"] }}
+          animate={prefersReducedMotion ? undefined : { x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
             duration: 20,
@@ -25,7 +26,7 @@ export function ImpactPaloozaMarquee() {
             style={{
               fontSize: "clamp(80px, 12vw, 160px)",
               color: "transparent",
-              WebkitTextStroke: "1px #F8F7F4",
+              WebkitTextStroke: "2px #F8F7F4",
               lineHeight: 1.1,
             }}
           >
@@ -33,6 +34,7 @@ export function ImpactPaloozaMarquee() {
           </span>
         </motion.div>
       </div>
+      <span className="sr-only">Impact Palooza</span>
 
       {/* Event details */}
       <div className="mx-auto mt-12 max-w-7xl px-6 lg:px-8">

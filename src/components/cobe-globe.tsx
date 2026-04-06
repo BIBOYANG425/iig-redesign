@@ -34,8 +34,12 @@ export default function CobeGlobe() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
     const globe = createGlobe(canvas, {
-      devicePixelRatio: 2,
+      devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
       width: 1000,
       height: 1000,
       phi: 0,
@@ -51,16 +55,26 @@ export default function CobeGlobe() {
       markers: [],
     });
 
+    let paused = false;
+
+    const onVisibilityChange = () => {
+      paused = document.hidden;
+      if (!paused) animRef.current = requestAnimationFrame(tick);
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
     const tick = () => {
+      if (paused) return;
+
       if (!pointerDown.current) {
-        // Apply momentum with friction
         phiRef.current += velocityRef.current;
         velocityRef.current *= 0.95;
 
-        // Kill tiny velocities, resume auto-rotate
         if (Math.abs(velocityRef.current) < 0.0001) {
           velocityRef.current = 0;
-          phiRef.current += 0.005;
+          if (!prefersReducedMotion) {
+            phiRef.current += 0.005;
+          }
         }
       }
 
@@ -78,6 +92,7 @@ export default function CobeGlobe() {
 
     return () => {
       cancelAnimationFrame(animRef.current);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
       globe.destroy();
     };
   }, []);

@@ -56,6 +56,9 @@ export function CaseStudyList() {
             <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-muted">
               {study.tag}
             </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted lg:hidden">
+              {study.summary}
+            </p>
           </Link>
         ))}
       </div>

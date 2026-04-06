@@ -69,7 +69,58 @@ export default function PixelBlast() {
     const CELL = 10 * dpr; // grid cell size in px
     const DOT_BASE = 2.5 * dpr; // base dot radius
 
+    let paused = false;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    const onVisibilityChange = () => {
+      paused = document.hidden;
+      if (!paused) animRef.current = requestAnimationFrame(draw);
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
+    if (prefersReducedMotion) {
+      // Draw a single static frame for reduced-motion users
+      const drawStatic = () => {
+        const W = canvas.width;
+        const H = canvas.height;
+        const cx = W / 2;
+        const cy = H / 2;
+        const maxR = Math.sqrt(cx * cx + cy * cy);
+        ctx.clearRect(0, 0, W, H);
+        const cols = Math.ceil(W / CELL);
+        const rows = Math.ceil(H / CELL);
+        for (let row = 0; row < rows; row++) {
+          for (let col = 0; col < cols; col++) {
+            const baseX = col * CELL + CELL / 2;
+            const baseY = row * CELL + CELL / 2;
+            const bx = col % 4;
+            const by = row % 4;
+            const threshold = BAYER_4X4[by][bx];
+            const dx = baseX - cx;
+            const dy = baseY - cy;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            const normDist = dist / maxR;
+            const density = 1 - normDist * normDist;
+            if (density < threshold) continue;
+            const edgeFade = Math.max(0, 1 - normDist * 1.3);
+            const alpha = edgeFade * (0.25 + density * 0.35);
+            const dotSize = DOT_BASE * (0.5 + density * 0.5);
+            ctx.fillStyle = `rgba(155, 217, 124, ${alpha * 0.8})`;
+            ctx.fillRect(baseX - dotSize / 2, baseY - dotSize / 2, dotSize, dotSize);
+          }
+        }
+      };
+      drawStatic();
+      return () => {
+        document.removeEventListener("visibilitychange", onVisibilityChange);
+        window.removeEventListener("resize", resize);
+      };
+    }
+
     const draw = (now: number) => {
+      if (paused) return;
       const t = now / 1000;
       const W = canvas.width;
       const H = canvas.height;
@@ -173,6 +224,7 @@ export default function PixelBlast() {
 
     return () => {
       cancelAnimationFrame(animRef.current);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
       window.removeEventListener("resize", resize);
     };
   }, []);
