@@ -43,4 +43,20 @@ export const caseStudies: CaseStudy[] = [
     testimonial:
       "IIG didn't just crunch numbers — they told the story of our impact in a way that resonated with funders. The dashboards they built are something we use every single week.",
   },
+  {
+    slug: "phresh-juice-bar",
+    client: "PHresh Juice Bar",
+    semester: "Spring 2024",
+    tag: "Kiva Microloan",
+    summary:
+      "Funded a $10,500 zero-interest Kiva microloan for a South LA entrepreneur to secure a ghost kitchen and launch an organic cold-pressed juice business serving his community.",
+    problem:
+      "Phelipe, a South Los Angeles native and former Whole Foods store leader, launched PHresh Juice Bar after a personal transformation centered on health and sobriety. He had been selling cold-pressed juice at local gyms and run clubs but needed a commercial kitchen to scale. Traditional lenders wouldn't finance a pre-revenue food startup with no collateral, leaving him stuck between a growing customer base and no way to produce at volume.",
+    approach:
+      "As a Kiva trustee partner, IIG's microfinance team conducted due diligence on Phelipe's business plan, assessed his market opportunity in the South LA food desert landscape, and structured a $10,500 zero-interest loan through Kiva's crowdfunding platform. Our analysts reviewed his unit economics, projected cash flow for a ghost kitchen operation, and helped him refine his pitch for Kiva's lender community. The loan was posted on Kiva and fully funded by 272 individual lenders worldwide.",
+    outcome:
+      "The loan enabled Phelipe to secure a ghost kitchen location and transition from informal pop-up sales to a legitimate commercial operation. PHresh Juice Bar now produces organic cold-pressed juice at scale for the South LA community. The successful funding and repayment cycle also strengthened IIG's track record as a Kiva trustee, enabling future microloans to LA-based entrepreneurs.",
+    testimonial:
+      "IIG believed in my vision when the banks wouldn't even take my call. Their team helped me put together a real plan and connected me with lenders who wanted to see my community thrive.",
+  },
 ];
