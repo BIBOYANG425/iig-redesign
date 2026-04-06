@@ -9,9 +9,9 @@ import { CanvasErrorBoundary } from "./error-boundary";
 const PixelBlast = dynamic(() => import("./pixel-blast"), { ssr: false });
 
 const headlineWords = [
-  { text: "Fund Ideas.", delay: 0 },
-  { text: "Forge Futures.", delay: 0.15 },
-  { text: "Fuel Social Change.", delay: 0.3 },
+  { text: "Rooted Locally.", delay: 0 },
+  { text: "Empowering Humanity.", delay: 0.15 },
+  { text: "Financing the Future.", delay: 0.3 },
 ];
 
 const fadeUp = {
@@ -73,8 +73,10 @@ export default function HeroPremium() {
             transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
             className="hero-premium__subtitle"
           >
-            USC&apos;s premier impact investing organization. We financially
-            empower social enterprises in Los Angeles and beyond.
+            USC&apos;s premier impact investing organization. We believe global
+            change starts at the grassroots. We direct capital and strategy to
+            the intersection of human development and natural energy, building a
+            sustainable future from Los Angeles to the world.
           </motion.p>
 
           <motion.div

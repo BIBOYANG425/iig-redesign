@@ -15,19 +15,19 @@ const services = [
   {
     name: "Pro-Bono Consulting",
     description:
-      "Semester-long client engagements delivering market sizing, competitive analysis, go-to-market strategy, and operational recommendations.",
+      "Rigorous, semester-long consulting engagements designed for the modern impact economy. We deliver market sizing, competitive analysis, and operational strategies that align grassroots human development with sustainable global growth.",
     href: "/about/services",
   },
   {
     name: "Microfinance — Kiva Trustee Partner",
     description:
-      "As an official Kiva trustee partner, we provide 0% interest loans to small business owners across Los Angeles, funding entrepreneurs who lack access to traditional capital.",
+      "As an official Kiva Trustee Partner, we are on the ground in Los Angeles, vetting and funding small business owners who lack access to traditional capital. This is where global change begins — at the grassroots.",
     href: "/about/services",
   },
   {
     name: "Impact Research",
     description:
-      "Primary and secondary research, data analysis, and white papers that inform client strategy and stakeholder decisions.",
+      "Primary and secondary research, data analysis, and white papers that map the intersection of human development, natural energy, and sustainable markets — informing strategy for clients and stakeholders.",
     href: "/about/services",
   },
 ];
@@ -54,7 +54,7 @@ export default function Home() {
               What We Deliver
             </p>
             <h2 className="mt-4 font-serif text-4xl font-semibold text-cream md:text-5xl">
-              Professional Consulting for Social Enterprises
+              Grassroots Impact, Global Scale
             </h2>
           </div>
           <div className="lg:col-span-7">
@@ -104,21 +104,24 @@ export default function Home() {
             {/* Left — recruitment pitch */}
             <div>
               <SectionHeading
-                title="Build Real Skills"
-                subtitle="IIG analysts gain hands-on consulting experience that prepares them for careers at top firms."
+                title="Join the Vanguard"
+                subtitle="We believe global change starts at the grassroots. We train analysts to bridge the gap between human development and natural energy, preparing you to lead the transition from local communities to the world's top firms."
               />
               <ul className="mt-8 space-y-4 text-sm text-muted">
                 <li className="flex gap-3">
                   <span className="text-green">→</span>
-                  Work directly with real clients on semester-long engagements
+                  Deploy real capital to real entrepreneurs as a Kiva Trustee
+                  Partner
                 </li>
                 <li className="flex gap-3">
                   <span className="text-green">→</span>
                   Build financial models, market analyses, and strategy decks
+                  for social enterprises
                 </li>
                 <li className="flex gap-3">
                   <span className="text-green">→</span>
-                  Join a selective community of driven, impact-minded analysts
+                  Join a selective community connecting human existence with
+                  sustainable growth
                 </li>
               </ul>
               <div className="mt-10 flex flex-wrap gap-4">
