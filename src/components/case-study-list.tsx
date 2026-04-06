@@ -22,10 +22,10 @@ const caseStudies = [
   },
   {
     number: "03",
-    tag: "Go-to-Market Strategy",
-    client: "Company Volunteer Day",
+    tag: "Kiva Microloan",
+    client: "PHresh Juice Bar",
     summary:
-      "Developed a market entry strategy and pricing model for a platform connecting corporations with high-impact volunteer programs.",
+      "Funded a $10,500 zero-interest Kiva loan for a South LA founder to secure a ghost kitchen and bring organic cold-pressed juice to his community.",
     href: "/clients/case-studies",
   },
 ];

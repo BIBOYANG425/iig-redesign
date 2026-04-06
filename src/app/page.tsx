@@ -19,9 +19,9 @@ const services = [
     href: "/about/services",
   },
   {
-    name: "Microfinance Advisory",
+    name: "Microfinance — Kiva Trustee Partner",
     description:
-      "Financial modeling, loan portfolio analysis, and investment memos for mission-driven lenders and impact funds.",
+      "As an official Kiva trustee partner, we provide 0% interest loans to small business owners across Los Angeles, funding entrepreneurs who lack access to traditional capital.",
     href: "/about/services",
   },
   {

@@ -12,9 +12,9 @@ const services = [
       "Our consulting teams work directly with social enterprises and mission-driven organizations across Los Angeles. From market research and competitive analysis to go-to-market strategy and financial modeling, we deliver actionable recommendations grounded in rigorous analysis. Each engagement is scoped like a professional consulting project, giving our analysts hands-on experience while creating real value for clients.",
   },
   {
-    title: "Microfinance",
+    title: "Microfinance — Kiva Trustee Partner",
     description:
-      "Through our microfinance advisory practice, we support underserved entrepreneurs and small businesses with financial guidance and strategic planning. Our teams conduct due diligence, assess lending opportunities, and develop frameworks that help microfinance institutions allocate capital more effectively — expanding access to finance for communities that need it most.",
+      "IIG is an official Kiva trustee partner, providing 0% interest microloans to small business owners across Los Angeles who lack access to traditional capital. Our analysts conduct due diligence on borrowers, assess lending opportunities, and manage the full loan lifecycle from application through repayment. We have funded entrepreneurs like Phelipe of PHresh Juice Bar — a South LA founder who received a $10,500 loan to secure a ghost kitchen and bring organic cold-pressed juice to his community. Through Kiva's platform, every dollar lent is crowdfunded by individual lenders worldwide, creating a direct bridge between global capital and local impact.",
   },
   {
     title: "Research",
