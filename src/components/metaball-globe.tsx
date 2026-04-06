@@ -75,16 +75,6 @@ export default function MetaballGlobe() {
     const size = canvas.clientWidth;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-    // Green: #9BD97C = rgb(155, 217, 124)
-    const greenR = 155 / 255;
-    const greenG = 217 / 255;
-    const greenB = 124 / 255;
-
-    // Deep blue sphere: #030514
-    const blueR = 3 / 255;
-    const blueG = 5 / 255;
-    const blueB = 20 / 255;
-
     const globe = createGlobe(canvas, {
       devicePixelRatio: dpr,
       width: size * dpr,
@@ -92,12 +82,13 @@ export default function MetaballGlobe() {
       phi: phiRef.current,
       theta: thetaRef.current,
       dark: 1,
-      diffuse: 1.4,
+      diffuse: 0.8,
       mapSamples: 16000,
-      mapBrightness: 8,
-      baseColor: [blueR, blueG, blueB],
-      markerColor: [greenR, greenG, greenB],
-      glowColor: [0.05, 0.05, 0.15],
+      mapBrightness: 3,
+      mapBaseBrightness: 0.01,
+      baseColor: [0.043, 0.043, 0.2],
+      markerColor: [0.608, 0.851, 0.486],
+      glowColor: [0.322, 0.322, 0.549],
       markers: [],
     });
 

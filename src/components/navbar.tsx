@@ -81,7 +81,7 @@ function Dropdown({
       onMouseLeave={onClose}
     >
       <button
-        className="flex items-center gap-1 text-sm font-medium tracking-wide text-text transition-colors hover:text-navy"
+        className="flex items-center gap-1 text-sm font-medium tracking-wide text-muted transition-colors hover:text-cream"
         onClick={onOpen}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -103,12 +103,12 @@ function Dropdown({
       </button>
 
       {isOpen && (
-        <div className="absolute left-1/2 top-full z-50 mt-2 min-w-[200px] -translate-x-1/2 rounded-lg border border-navy/10 bg-cream p-2 shadow-lg">
+        <div className="absolute left-1/2 top-full z-50 mt-2 min-w-[200px] -translate-x-1/2 border border-muted/20 bg-surface p-2 shadow-lg">
           {item.children!.map((child) => (
             <Link
               key={child.href}
               href={child.href}
-              className="block rounded-md px-4 py-2.5 text-sm text-text-muted transition-colors hover:bg-navy/5 hover:text-navy"
+              className="block px-4 py-2.5 text-sm text-muted transition-colors hover:bg-muted/10 hover:text-cream"
               onClick={onClose}
             >
               {child.label}
@@ -125,12 +125,12 @@ export function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-navy/10 bg-cream/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-muted/20 bg-surface/90 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
         <Link
           href="/"
-          className="font-serif text-xl font-bold tracking-tight text-navy"
+          className="font-serif text-xl font-bold tracking-tight text-cream"
         >
           Impact Investing Group
         </Link>
@@ -150,7 +150,7 @@ export function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium tracking-wide text-text transition-colors hover:text-navy"
+                className="text-sm font-medium tracking-wide text-muted transition-colors hover:text-cream"
               >
                 {item.label}
               </Link>
@@ -163,7 +163,7 @@ export function Navbar() {
           href="https://forms.gle/iT1fCQjJjf8H57JA7"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden rounded-full bg-green px-5 py-2 text-sm font-semibold text-navy transition-colors hover:bg-green-dark lg:inline-block"
+          className="hidden border border-green bg-transparent px-5 py-2 text-sm font-semibold text-green transition-colors hover:bg-green hover:text-navy lg:inline-block"
         >
           Apply Now
         </a>
@@ -176,17 +176,17 @@ export function Navbar() {
         >
           <div className="flex w-5 flex-col gap-1.5">
             <span
-              className={`block h-0.5 w-full bg-navy transition-all ${
+              className={`block h-0.5 w-full bg-cream transition-all ${
                 mobileOpen ? "translate-y-2 rotate-45" : ""
               }`}
             />
             <span
-              className={`block h-0.5 w-full bg-navy transition-all ${
+              className={`block h-0.5 w-full bg-cream transition-all ${
                 mobileOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`block h-0.5 w-full bg-navy transition-all ${
+              className={`block h-0.5 w-full bg-cream transition-all ${
                 mobileOpen ? "-translate-y-2 -rotate-45" : ""
               }`}
             />

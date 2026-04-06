@@ -1,20 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-// Lazy-load heavy canvas/WebGL components (no SSR)
 const PixelBlast = dynamic(() => import("./pixel-blast"), { ssr: false });
-const MetaballGlobe = dynamic(() => import("./metaball-globe"), { ssr: false });
-
-/*
-  Hero (Premium) — Full-viewport hero with:
-  - PixelBlast canvas background (Bayer dithered grid)
-  - Stagger-faded typography (left column)
-  - Interactive cobe globe (right column)
-  - Deep blue-hour background (#05081C) + lime green (#9BD97C) accents
-*/
 
 const headlineWords = [
   { text: "Fund Ideas.", delay: 0 },
@@ -36,16 +27,26 @@ const fadeUp = {
 };
 
 export default function HeroPremium() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 0.5], [0, -80]);
+
   return (
-    <section className="hero-premium">
-      {/* Canvas background */}
+    <section ref={sectionRef} className="hero-premium">
       <div className="hero-premium__bg">
         <PixelBlast />
       </div>
 
       <div className="hero-premium__content">
-        {/* Left column — Typography */}
-        <div className="hero-premium__left">
+        <motion.div
+          style={{ opacity: textOpacity, y: textY }}
+          className="hero-premium__left"
+        >
           <motion.div
             initial="hidden"
             animate="visible"
@@ -94,16 +95,6 @@ export default function HeroPremium() {
               Our Services
             </Link>
           </motion.div>
-        </div>
-
-        {/* Right column — Globe */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-          className="hero-premium__right"
-        >
-          <MetaballGlobe />
         </motion.div>
       </div>
     </section>

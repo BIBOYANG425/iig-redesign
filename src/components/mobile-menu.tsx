@@ -32,19 +32,19 @@ export function MobileMenu({
   }
 
   return (
-    <div className="border-t border-navy/10 bg-cream lg:hidden">
+    <div className="border-t border-muted/20 bg-surface lg:hidden">
       <div className="mx-auto max-w-7xl space-y-1 px-6 py-4">
         {navItems.map((item) =>
           item.children ? (
             <div key={item.label}>
               <button
                 onClick={() => toggleSection(item.label)}
-                className="flex w-full items-center justify-between py-3 text-base font-medium text-text"
+                className="flex w-full items-center justify-between py-3 text-base font-medium text-cream"
                 aria-expanded={expanded === item.label}
               >
                 {item.label}
                 <svg
-                  className={`h-4 w-4 text-text-muted transition-transform ${
+                  className={`h-4 w-4 text-muted transition-transform ${
                     expanded === item.label ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -61,13 +61,13 @@ export function MobileMenu({
               </button>
 
               {expanded === item.label && (
-                <div className="ml-4 space-y-1 border-l border-navy/10 pl-4">
+                <div className="ml-4 space-y-1 border-l border-muted/20 pl-4">
                   {item.children!.map((child) => (
                     <Link
                       key={child.href}
                       href={child.href}
                       onClick={onClose}
-                      className="block py-2 text-sm text-text-muted transition-colors hover:text-navy"
+                      className="block py-2 text-sm text-muted transition-colors hover:text-cream"
                     >
                       {child.label}
                     </Link>
@@ -80,7 +80,7 @@ export function MobileMenu({
               key={item.label}
               href={item.href}
               onClick={onClose}
-              className="block py-3 text-base font-medium text-text transition-colors hover:text-navy"
+              className="block py-3 text-base font-medium text-cream transition-colors hover:text-green"
             >
               {item.label}
             </Link>
@@ -94,7 +94,7 @@ export function MobileMenu({
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            className="block w-full rounded-full bg-green py-3 text-center text-sm font-semibold text-navy transition-colors hover:bg-green-dark"
+            className="block w-full border border-green bg-transparent py-3 text-center text-sm font-semibold text-green transition-colors hover:bg-green hover:text-navy"
           >
             Apply Now
           </a>

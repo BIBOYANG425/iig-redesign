@@ -155,7 +155,8 @@ export default function PixelBlast() {
           const sizeWobble = 1 + Math.sin(t * 1.5 + col * 0.3 + row * 0.3) * 0.15;
           const dotSize = DOT_BASE * sizeWobble * (0.5 + density * 0.5);
 
-          ctx.fillStyle = `rgba(155, 217, 124, ${alpha})`;
+          // #9BD97C is rgb(155, 217, 124)
+          ctx.fillStyle = `rgba(155, 217, 124, ${alpha * 0.8})`;
           ctx.fillRect(
             px - dotSize / 2,
             py - dotSize / 2,
