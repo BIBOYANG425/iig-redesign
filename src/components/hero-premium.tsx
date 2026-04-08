@@ -46,7 +46,7 @@ export default function HeroPremium() {
   // Reduced motion: show everything immediately
   if (prefersReducedMotion) {
     return (
-      <section className="hero-premium" style={{ height: "100vh" }}>
+      <section className="hero-premium bg-navy" style={{ height: "100vh" }}>
         <div className="hero-premium__bg">
           <HeroGrain />
         </div>
@@ -73,7 +73,7 @@ export default function HeroPremium() {
   }
 
   return (
-    <section ref={sectionRef} style={{ height: "300vh" }}>
+    <section ref={sectionRef} className="bg-navy" style={{ height: "300vh" }}>
       {/* Sticky inner — pins at top for scroll duration */}
       <div className="hero-premium" style={{ position: "sticky", top: 0, height: "100vh" }}>
         <motion.div className="hero-premium__bg" style={{ opacity: grainOpacity }}>
