@@ -17,16 +17,16 @@ export default function ScrollGlobe() {
   // Vertical movement: subtle vertical shift per section
   const y = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.65, 1], ["0%", "5%", "0%", "10%", "15%"]);
 
-  // Opacity: globe fades slightly in the footer region
+  // Opacity: globe stays visible throughout, slight fade in footer
   const opacity = useTransform(scrollYProgress, [0, 0.85, 1], [1, 1, 0.6]);
 
   return (
     <div className="scroll-globe">
       <motion.div className="scroll-globe__inner" style={{ scale, x, y, opacity }}>
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
+          initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{ duration: 1.8, ease: "easeOut" }}
           style={{ width: "100%", height: "100%" }}
         >
           <CobeGlobe />

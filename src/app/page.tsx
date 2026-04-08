@@ -1,36 +1,13 @@
-import Link from "next/link";
 import HeroPremium from "@/components/hero-premium";
 import ScrollGlobe from "@/components/scroll-globe";
 import { SocialProof } from "@/components/social-proof";
 import { SectionHeading } from "@/components/section-heading";
-import { NewsletterSignup } from "@/components/newsletter-signup";
 import { ImpactPaloozaMarquee } from "@/components/impact-palooza-marquee";
 import { CaseStudyList } from "@/components/case-study-list";
+import { ServicesSection } from "@/components/services-section";
+import { RecruitmentSection } from "@/components/recruitment-section";
 import { CanvasErrorBoundary } from "@/components/error-boundary";
 import "@/styles/hero-premium.css";
-
-const APPLICATIONS_OPEN = true; // Set to false when Google Form is closed
-
-const services = [
-  {
-    name: "Pro-Bono Consulting",
-    description:
-      "Rigorous, semester-long consulting engagements designed for the modern impact economy. We deliver market sizing, competitive analysis, and operational strategies that align grassroots human development with sustainable global growth.",
-    href: "/about/services",
-  },
-  {
-    name: "Microfinance — Kiva Trustee Partner",
-    description:
-      "As an official Kiva Trustee Partner, we are on the ground in Los Angeles, vetting and funding small business owners who lack access to traditional capital. This is where global change begins — at the grassroots.",
-    href: "/about/services",
-  },
-  {
-    name: "Impact Research",
-    description:
-      "Primary and secondary research, data analysis, and white papers that map the intersection of human development, natural energy, and sustainable markets — informing strategy for clients and stakeholders.",
-    href: "/about/services",
-  },
-];
 
 export default function Home() {
   return (
@@ -40,52 +17,25 @@ export default function Home() {
         <ScrollGlobe />
       </CanvasErrorBoundary>
 
-      {/* Hero */}
+      {/* Hero — dark navy, pinned scroll-reveal */}
       <HeroPremium />
 
-      {/* Social Proof */}
+      {/* Social Proof — dark navy, counter animation */}
       <SocialProof />
 
-      {/* What We Do — Service Rows */}
-      <section className="bg-transparent">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:gap-20 lg:px-8">
-          <div className="lg:col-span-5">
-            <p className="text-xs font-semibold uppercase tracking-widest text-green">
-              What We Deliver
-            </p>
-            <h2 className="mt-4 font-serif text-4xl font-semibold text-cream md:text-5xl">
-              Grassroots Impact, Global Scale
-            </h2>
-          </div>
-          <div className="lg:col-span-7">
-            {services.map((service) => (
-              <Link
-                key={service.name}
-                href={service.href}
-                className="group flex items-center justify-between border-b border-muted/20 py-6 transition-colors hover:bg-muted/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:bg-muted/5"
-              >
-                <div>
-                  <h3 className="font-serif text-2xl font-semibold text-cream">
-                    {service.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted">
-                    {service.description}
-                  </p>
-                </div>
-                <span className="text-green opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-100 group-focus-visible:translate-x-2 group-focus-visible:opacity-100">
-                  →
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Services — dark navy, parallax stagger */}
+      <ServicesSection />
 
-      {/* Impact Palooza — Kinetic Marquee */}
+      {/* Impact Palooza — dark navy, pinned scaling */}
       <ImpactPaloozaMarquee />
 
-      {/* Recent Case Studies — Numbered List */}
-      <section className="bg-navy">
+      {/* Recent Case Studies — transitional gradient */}
+      <section
+        className="relative"
+        style={{
+          background: "linear-gradient(to bottom, #16165F 0%, #1E1E7A 60%, #2A2A6E 100%)",
+        }}
+      >
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
           <SectionHeading
             title="Recent Engagements"
@@ -97,76 +47,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recruitment CTA + Newsletter */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
-            {/* Left — recruitment pitch */}
-            <div>
-              <SectionHeading
-                title="Join the Vanguard"
-                subtitle="We believe global change starts at the grassroots. We train analysts to bridge the gap between human development and natural energy, preparing you to lead the transition from local communities to the world's top firms."
-              />
-              <ul className="mt-8 space-y-4 text-sm text-muted">
-                <li className="flex gap-3">
-                  <span className="text-green">→</span>
-                  Deploy real capital to real entrepreneurs as a Kiva Trustee
-                  Partner
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-green">→</span>
-                  Build financial models, market analyses, and strategy decks
-                  for social enterprises
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-green">→</span>
-                  Join a selective community connecting human existence with
-                  sustainable growth
-                </li>
-              </ul>
-              <div className="mt-10 flex flex-wrap gap-4">
-                {APPLICATIONS_OPEN ? (
-                  <a
-                    href="https://forms.gle/iT1fCQjJjf8H57JA7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border border-green bg-transparent px-8 py-3 text-sm font-semibold text-green transition-colors hover:bg-green hover:text-navy"
-                  >
-                    Apply Now
-                  </a>
-                ) : (
-                  <span className="border border-muted/30 px-8 py-3 text-sm font-semibold text-muted">
-                    Applications open in September
-                  </span>
-                )}
-                <Link
-                  href="/apply"
-                  className="border border-muted/30 bg-transparent px-8 py-3 text-sm font-semibold text-cream transition-colors hover:border-cream"
-                >
-                  Learn More
-                </Link>
-              </div>
-            </div>
-            {/* Right — newsletter (secondary) */}
-            <div className="flex flex-col justify-center">
-              <p className="text-sm text-muted">
-                Get notified when applications open.
-              </p>
-              <div className="mt-4">
-                <NewsletterSignup />
-              </div>
-              <a
-                href="https://www.instagram.com/usciig"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 text-sm text-muted transition-colors hover:text-cream"
-              >
-                @usciig on Instagram
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Recruitment + Newsletter — cream, soft motion */}
+      <RecruitmentSection />
     </>
   );
 }
