@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Services — IIG",
+  title: "Services",
 };
 
 const services = [
   {
-    title: "Consulting",
+    title: "Pro-Bono Consulting",
     description:
       "Our consulting teams work directly with social enterprises and mission-driven organizations across Los Angeles. We deliver rigorous, semester-long engagements — from market sizing and competitive analysis to go-to-market strategy and financial modeling — designed to align grassroots human development with sustainable global growth. Each project is scoped like a professional consulting engagement, creating real value for clients while training the next generation of impact-driven leaders.",
   },
@@ -42,6 +43,9 @@ export default function ServicesPage() {
 
       {/* Service Sections */}
       <section className="bg-cream">
+        <div className="mx-auto max-w-7xl px-6 pt-6 lg:px-8">
+          <Breadcrumbs items={[{ label: "About", href: "/about" }, { label: "Services" }]} />
+        </div>
         <div className="mx-auto max-w-7xl space-y-24 px-6 py-24 lg:px-8">
           {services.map((service) => (
             <div key={service.title} className="max-w-3xl">

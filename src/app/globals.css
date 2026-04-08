@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #0B0B33;
-  --color-navy-light: #16165F;
+  --color-navy: #16165F;
+  --color-navy-light: #1E1E7A;
   --color-green: #9BD97C;
   --color-green-dark: #7ABF5A;
   --color-cream: #F8F7F4;
   --color-off-white: #FAFAF8;
   --color-text: #1A1A2E;
   --color-text-muted: #6B6B80;
-  --color-surface: #0B0B33;
-  --color-muted: #7A7AB0;
+  --color-surface: #111142;
+  --color-muted: #8E8EC4;
 
   /* Extended palette — Earth & Space narrative */
   --color-gold: #D9A621;
@@ -21,7 +21,7 @@
   --color-violet-light: #9966E6;
 
   --font-serif: var(--font-playfair), serif;
-  --font-sans: var(--font-inter), sans-serif;
+  --font-sans: var(--font-jakarta), sans-serif;
 }
 
 @layer base {

@@ -53,13 +53,13 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-surface text-cream">
+    <footer className="bg-navy text-cream">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         {/* Link columns */}
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {columns.map((col) => (
             <div key={col.heading}>
-              <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-green">
+              <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-cream/50">
                 {col.heading}
               </h4>
               <ul className="space-y-3">
@@ -110,7 +110,7 @@ export function Footer() {
               href="https://forms.gle/iT1fCQjJjf8H57JA7"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-green bg-transparent px-5 py-2 text-sm font-semibold text-green transition-colors hover:bg-green hover:text-navy"
+              className="border border-green bg-transparent px-8 py-3 text-sm font-semibold text-green transition-colors hover:bg-green hover:text-navy"
             >
               Apply Now
             </a>

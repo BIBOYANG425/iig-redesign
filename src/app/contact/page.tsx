@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Contact — IIG",
+  title: "Contact",
 };
 
 export default function ContactPage() {
@@ -21,9 +22,13 @@ export default function ContactPage() {
 
       {/* Contact Form */}
       <section className="bg-cream">
+        <div className="mx-auto max-w-2xl px-6 pt-6 lg:px-8">
+          <Breadcrumbs items={[{ label: "Contact" }]} />
+        </div>
         <div className="mx-auto max-w-2xl px-6 py-24 lg:px-8">
+          {/* TODO: Replace # with actual Formspree form ID before deploying (e.g. https://formspree.io/f/xxxxx) */}
           <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            action="#"
             method="POST"
             className="space-y-6"
           >
@@ -41,7 +46,7 @@ export default function ContactPage() {
                   id="first-name"
                   name="first-name"
                   required
-                  className="w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-text placeholder:text-text-muted/50 focus:border-navy focus:ring-1 focus:ring-navy focus:outline-none"
+                  className="w-full border border-navy/10 bg-white px-4 py-3 text-text placeholder:text-text-muted/50 focus:border-navy focus:ring-1 focus:ring-navy focus:outline-none"
                   placeholder="Jane"
                 />
               </div>
@@ -57,7 +62,7 @@ export default function ContactPage() {
                   id="last-name"
                   name="last-name"
                   required
-                  className="w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-text placeholder:text-text-muted/50 focus:border-navy focus:ring-1 focus:ring-navy focus:outline-none"
+                  className="w-full border border-navy/10 bg-white px-4 py-3 text-text placeholder:text-text-muted/50 focus:border-navy focus:ring-1 focus:ring-navy focus:outline-none"
                   placeholder="Doe"
                 />
               </div>
@@ -76,7 +81,7 @@ export default function ContactPage() {
                 id="email"
                 name="email"
                 required
-                className="w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-text placeholder:text-text-muted/50 focus:border-navy focus:ring-1 focus:ring-navy focus:outline-none"
+                className="w-full border border-navy/10 bg-white px-4 py-3 text-text placeholder:text-text-muted/50 focus:border-navy focus:ring-1 focus:ring-navy focus:outline-none"
                 placeholder="jane@example.com"
               />
             </div>
@@ -92,7 +97,7 @@ export default function ContactPage() {
               <select
                 id="subject"
                 name="subject"
-                className="w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-text focus:border-navy focus:ring-1 focus:ring-navy focus:outline-none"
+                className="w-full border border-navy/10 bg-white px-4 py-3 text-text focus:border-navy focus:ring-1 focus:ring-navy focus:outline-none"
               >
                 <option>General Inquiry</option>
                 <option>Consulting Inquiry</option>
@@ -114,7 +119,7 @@ export default function ContactPage() {
                 name="message"
                 rows={6}
                 required
-                className="w-full rounded-lg border border-navy/10 bg-white px-4 py-3 text-text placeholder:text-text-muted/50 focus:border-navy focus:ring-1 focus:ring-navy focus:outline-none"
+                className="w-full border border-navy/10 bg-white px-4 py-3 text-text placeholder:text-text-muted/50 focus:border-navy focus:ring-1 focus:ring-navy focus:outline-none"
                 placeholder="How can we help?"
               />
             </div>
@@ -122,10 +127,20 @@ export default function ContactPage() {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full rounded-lg bg-navy px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-navy-light sm:w-auto"
+              className="w-full border border-navy bg-navy px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-navy-light sm:w-auto"
             >
               Send Message
             </button>
+
+            <p className="mt-4 text-sm text-text-muted">
+              Or reach us directly at{" "}
+              <a
+                href="mailto:usciig@gmail.com"
+                className="text-navy underline"
+              >
+                usciig@gmail.com
+              </a>
+            </p>
           </form>
 
           {/* Social Links */}

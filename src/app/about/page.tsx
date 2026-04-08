@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "About Us — IIG",
+  title: "About Us",
 };
 
 export default function AboutPage() {
@@ -21,6 +22,9 @@ export default function AboutPage() {
 
       {/* Two-Column Content */}
       <section className="bg-cream">
+        <div className="mx-auto max-w-7xl px-6 pt-6 lg:px-8">
+          <Breadcrumbs items={[{ label: "About" }]} />
+        </div>
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-2 lg:gap-20 lg:px-8">
           {/* Left — Mission & History */}
           <div className="space-y-6 text-text-muted leading-relaxed">
@@ -54,8 +58,13 @@ export default function AboutPage() {
           </div>
 
           {/* Right — Group Photo Placeholder */}
-          <div className="flex items-center justify-center rounded-xl bg-navy/5 min-h-[320px]">
-            <p className="text-sm text-text-muted">Group photo</p>
+          <div className="flex flex-col items-center justify-center bg-navy/5 min-h-[320px] p-8">
+            <p className="text-sm font-medium text-navy/30">
+              IIG Team Photo
+            </p>
+            <p className="mt-1 text-xs text-navy/20">
+              Coming soon
+            </p>
           </div>
         </div>
       </section>

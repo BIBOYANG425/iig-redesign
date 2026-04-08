@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const study = caseStudies.find((s) => s.slug === slug);
   if (!study) return { title: "Case Study — IIG" };
-  return { title: `${study.client} — IIG` };
+  return { title: study.client };
 }
 
 export default async function CaseStudyPage({ params }: Props) {
@@ -30,7 +30,7 @@ export default async function CaseStudyPage({ params }: Props) {
       <section className="bg-navy">
         <div className="mx-auto max-w-7xl px-6 py-32 text-center lg:px-8">
           <div className="flex items-center justify-center gap-3">
-            <span className="rounded-full bg-green/20 px-3 py-1 text-xs font-semibold text-green">
+            <span className="bg-green/20 px-3 py-1 text-xs font-semibold text-green">
               {study.tag}
             </span>
             <span className="text-xs text-white/50">{study.semester}</span>

@@ -24,8 +24,8 @@ export function NewsletterSignup() {
 
   if (status === "success") {
     return (
-      <p className="font-serif text-2xl text-green">
-        Welcome to the movement.
+      <p className="font-serif text-2xl text-navy">
+        You&apos;re in. We&apos;ll be in touch.
       </p>
     );
   }
@@ -41,23 +41,23 @@ export function NewsletterSignup() {
           aria-label="Email address"
           required
           disabled={status === "loading"}
-          className="flex-1 border border-muted/30 bg-transparent px-6 py-4 text-cream placeholder:text-muted outline-none transition-colors focus:border-green disabled:opacity-50"
+          className="flex-1 border border-navy/20 bg-white px-6 py-4 text-text placeholder:text-text-muted/50 outline-none transition-colors focus:border-navy disabled:opacity-50"
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="border border-green bg-transparent px-8 py-4 text-sm font-semibold text-green transition-colors hover:bg-green hover:text-navy disabled:opacity-50"
+          className="border border-navy bg-navy px-8 py-4 text-sm font-semibold text-cream transition-colors hover:bg-navy-light disabled:opacity-50"
         >
           {status === "loading" ? "..." : "Subscribe"}
         </button>
       </div>
       {status === "error" && (
-        <p className="text-sm text-red-400">
+        <p className="text-sm text-red-600">
           Something went wrong.{" "}
           <button
             type="button"
             onClick={() => setStatus("idle")}
-            className="underline transition-colors hover:text-cream"
+            className="underline transition-colors hover:text-navy"
           >
             Try again
           </button>

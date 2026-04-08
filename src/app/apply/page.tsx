@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Why Join Us — IIG",
+  title: "Why Join Us",
 };
+
+const APPLICATIONS_OPEN = true;
 
 const reasons = [
   {
@@ -46,6 +49,9 @@ export default function ApplyPage() {
 
       {/* Reasons */}
       <section className="bg-cream">
+        <div className="mx-auto max-w-3xl px-6 pt-6 lg:px-8">
+          <Breadcrumbs items={[{ label: "Apply" }]} />
+        </div>
         <div className="mx-auto max-w-3xl space-y-20 px-6 py-24 lg:px-8">
           {reasons.map((reason) => (
             <div key={reason.heading}>
@@ -63,23 +69,44 @@ export default function ApplyPage() {
       {/* CTA Block */}
       <section className="bg-off-white">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <div className="rounded-xl bg-navy px-8 py-16 text-center">
-            <h2 className="font-serif text-4xl font-bold text-white md:text-5xl">
-              Ready to join the movement?
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-white/70">
-              Applications open at the start of each semester. The work ahead
-              needs you. Check back for the latest timeline, or follow us on
-              Instagram to stay in the loop.
-            </p>
-            <a
-              href="https://forms.gle/iT1fCQjJjf8H57JA7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-block rounded-full bg-green px-8 py-3.5 text-base font-semibold text-navy transition-colors hover:bg-green-dark"
-            >
-              Apply Now
-            </a>
+          <div className="bg-navy px-8 py-16 text-center">
+            {APPLICATIONS_OPEN ? (
+              <>
+                <h2 className="font-serif text-4xl font-bold text-white md:text-5xl">
+                  Ready to apply?
+                </h2>
+                <p className="mx-auto mt-4 max-w-xl text-white/70">
+                  Applications for Fall 2026 are open. Join a selective community of
+                  impact-minded analysts at USC.
+                </p>
+                <a
+                  href="https://forms.gle/iT1fCQjJjf8H57JA7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-block border border-green bg-transparent px-8 py-3 text-sm font-semibold text-green transition-colors hover:bg-green hover:text-navy"
+                >
+                  Apply Now
+                </a>
+              </>
+            ) : (
+              <>
+                <h2 className="font-serif text-4xl font-bold text-white md:text-5xl">
+                  Applications open soon
+                </h2>
+                <p className="mx-auto mt-4 max-w-xl text-white/70">
+                  Applications open at the start of each semester. Follow us on Instagram
+                  to stay in the loop.
+                </p>
+                <a
+                  href="https://www.instagram.com/usciig"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-block border border-cream/30 bg-transparent px-8 py-3 text-sm font-semibold text-cream transition-colors hover:border-cream"
+                >
+                  Follow @usciig
+                </a>
+              </>
+            )}
           </div>
         </div>
       </section>

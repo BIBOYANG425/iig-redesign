@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Impact Palooza — IIG",
+  title: "Impact Palooza",
 };
 
 export default function ImpactPaloozaPage() {
@@ -10,7 +11,7 @@ export default function ImpactPaloozaPage() {
       {/* Navy Header */}
       <section className="bg-navy">
         <div className="mx-auto max-w-7xl px-6 py-32 text-center lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-green">
+          <p className="text-xs font-semibold uppercase tracking-widest text-white/50">
             IIG&rsquo;s Signature Annual Event
           </p>
           <h1 className="mt-4 font-serif text-5xl font-bold text-white md:text-6xl">
@@ -33,6 +34,9 @@ export default function ImpactPaloozaPage() {
 
       {/* What is Impact Palooza? */}
       <section className="bg-cream">
+        <div className="mx-auto max-w-3xl px-6 pt-6 lg:px-8">
+          <Breadcrumbs items={[{ label: "Impact Palooza" }]} />
+        </div>
         <div className="mx-auto max-w-3xl px-6 py-24 text-center lg:px-8">
           <h2 className="font-serif text-4xl font-semibold text-navy md:text-5xl">
             What is Impact Palooza?
@@ -55,14 +59,18 @@ export default function ImpactPaloozaPage() {
           <h2 className="text-center font-serif text-4xl font-semibold text-navy md:text-5xl">
             Past Events
           </h2>
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[2024, 2023, 2022].map((year) => (
-              <div
-                key={year}
-                className="flex aspect-video items-center justify-center rounded-xl bg-navy/5"
-              >
-                <p className="text-sm text-text-muted">
-                  Impact Palooza {year}
+          <div className="mt-14 mx-auto max-w-3xl space-y-8">
+            {[
+              { year: 2024, semester: "Spring", highlight: "12 teams presented deliverables to clients and faculty judges" },
+              { year: 2023, semester: "Spring", highlight: "Expanded to include microfinance showcase alongside consulting presentations" },
+              { year: 2022, semester: "Spring", highlight: "First in-person Impact Palooza since 2019" },
+            ].map((event) => (
+              <div key={event.year} className="border-b border-navy/10 pb-8">
+                <p className="text-xs font-semibold uppercase tracking-widest text-navy/40">
+                  {event.semester} {event.year}
+                </p>
+                <p className="mt-2 text-lg text-text-muted">
+                  {event.highlight}
                 </p>
               </div>
             ))}

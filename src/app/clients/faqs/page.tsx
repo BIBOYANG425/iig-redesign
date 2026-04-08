@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Accordion } from "@/components/accordion";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Client FAQs — IIG",
+  title: "Client FAQs",
 };
 
 const faqs = [
@@ -47,6 +48,9 @@ export default function ClientFaqsPage() {
 
       {/* FAQ Accordion */}
       <section className="bg-cream">
+        <div className="mx-auto max-w-3xl px-6 pt-6 lg:px-8">
+          <Breadcrumbs items={[{ label: "Clients", href: "/clients" }, { label: "FAQs" }]} />
+        </div>
         <div className="mx-auto max-w-3xl px-6 py-24 lg:px-8">
           <Accordion items={faqs} />
         </div>

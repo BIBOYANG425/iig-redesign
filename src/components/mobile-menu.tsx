@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 interface DropdownItem {
@@ -18,12 +18,28 @@ export function MobileMenu({
   isOpen,
   onClose,
   navItems,
+  pathname,
 }: {
   isOpen: boolean;
   onClose: () => void;
   navItems: NavItem[];
+  pathname: string;
 }) {
   const [expanded, setExpanded] = useState<string | null>(null);
+
+  // Auto-expand section when a child page is active
+  useEffect(() => {
+    if (isOpen) {
+      const activeParent = navItems.find(
+        (item) =>
+          item.children &&
+          (pathname === item.href || pathname.startsWith(item.href + "/"))
+      );
+      if (activeParent) {
+        setExpanded(activeParent.label);
+      }
+    }
+  }, [isOpen, pathname, navItems]);
 
   if (!isOpen) return null;
 
@@ -32,15 +48,17 @@ export function MobileMenu({
   }
 
   return (
-    <div className="border-t border-muted/20 bg-surface lg:hidden">
+    <div className="border-t border-muted/20 bg-navy lg:hidden">
       <div className="mx-auto max-w-7xl space-y-1 px-6 py-4">
         {navItems.map((item) =>
           item.children ? (
             <div key={item.label}>
               <button
                 onClick={() => toggleSection(item.label)}
-                className="flex w-full items-center justify-between py-3 text-base font-medium text-cream"
-                aria-expanded={expanded === item.label}
+                className={`flex w-full items-center justify-between py-3 text-base font-medium ${
+                  pathname === item.href || pathname.startsWith(item.href + "/") ? "text-green" : "text-cream"
+                }`}
+                aria-expanded={expanded === item.label || pathname === item.href || pathname.startsWith(item.href + "/")}
               >
                 {item.label}
                 <svg
@@ -67,7 +85,9 @@ export function MobileMenu({
                       key={child.href}
                       href={child.href}
                       onClick={onClose}
-                      className="block py-2 text-sm text-muted transition-colors hover:text-cream"
+                      className={`block py-2 text-sm transition-colors hover:text-cream ${
+                        pathname === child.href ? "text-green" : "text-muted"
+                      }`}
                     >
                       {child.label}
                     </Link>
@@ -80,7 +100,9 @@ export function MobileMenu({
               key={item.label}
               href={item.href}
               onClick={onClose}
-              className="block py-3 text-base font-medium text-cream transition-colors hover:text-green"
+              className={`block py-3 text-base font-medium transition-colors hover:text-green ${
+                pathname === item.href ? "text-green" : "text-cream"
+              }`}
             >
               {item.label}
             </Link>

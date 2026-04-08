@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MobileMenu } from "./mobile-menu";
 
 interface DropdownItem {
@@ -53,12 +54,15 @@ function Dropdown({
   isOpen,
   onOpen,
   onClose,
+  pathname,
 }: {
   item: NavItem;
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
+  pathname: string;
 }) {
+  const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -81,7 +85,7 @@ function Dropdown({
       onMouseLeave={onClose}
     >
       <button
-        className="flex items-center gap-1 text-sm font-medium tracking-wide text-muted transition-colors hover:text-cream"
+        className={`flex items-center gap-1 text-sm font-medium tracking-wide transition-colors hover:text-cream ${isActive ? "text-cream" : "text-muted"}`}
         onClick={onOpen}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -104,12 +108,12 @@ function Dropdown({
 
       {isOpen && (
         <div className="absolute left-1/2 top-full z-50 min-w-[220px] -translate-x-1/2 pt-2">
-          <div className="border border-muted/20 bg-surface p-3 shadow-lg">
+          <div className="border border-muted/20 bg-navy p-3 shadow-lg">
             {item.children!.map((child) => (
               <Link
                 key={child.href}
                 href={child.href}
-                className="block px-4 py-3 text-sm text-muted transition-colors hover:bg-muted/10 hover:text-cream"
+                className={`block px-4 py-3 text-sm transition-colors hover:bg-muted/10 hover:text-cream ${pathname === child.href ? "text-cream" : "text-muted"}`}
                 onClick={onClose}
               >
                 {child.label}
@@ -123,11 +127,12 @@ function Dropdown({
 }
 
 export function Navbar() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-muted/20 bg-surface/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-muted/20 bg-navy/95 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
         <Link
@@ -147,12 +152,15 @@ export function Navbar() {
                 isOpen={openDropdown === item.label}
                 onOpen={() => setOpenDropdown(item.label)}
                 onClose={() => setOpenDropdown(null)}
+                pathname={pathname}
               />
             ) : (
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium tracking-wide text-muted transition-colors hover:text-cream"
+                className={`text-sm font-medium tracking-wide transition-colors hover:text-cream ${
+                  pathname === item.href ? "text-cream" : "text-muted"
+                }`}
               >
                 {item.label}
               </Link>
@@ -201,6 +209,7 @@ export function Navbar() {
         isOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}
         navItems={navItems}
+        pathname={pathname}
       />
     </header>
   );

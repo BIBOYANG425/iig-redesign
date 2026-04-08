@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { caseStudies } from "@/data/case-studies";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Case Studies — IIG",
+  title: "Case Studies",
 };
 
 export default function CaseStudiesPage() {
@@ -20,15 +21,18 @@ export default function CaseStudiesPage() {
 
       {/* Case Study Cards */}
       <section className="bg-cream">
+        <div className="mx-auto max-w-4xl px-6 pt-6 lg:px-8">
+          <Breadcrumbs items={[{ label: "Clients", href: "/clients" }, { label: "Case Studies" }]} />
+        </div>
         <div className="mx-auto max-w-4xl space-y-12 px-6 py-24 lg:px-8">
           {caseStudies.map((study) => (
             <Link
               key={study.slug}
               href={`/clients/case-studies/${study.slug}`}
-              className="block rounded-xl bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+              className="block bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
             >
               <div className="flex flex-wrap items-center gap-3">
-                <span className="rounded-full bg-green/20 px-3 py-1 text-xs font-semibold text-navy">
+                <span className="bg-green/20 px-3 py-1 text-xs font-semibold text-navy">
                   {study.tag}
                 </span>
                 <span className="text-xs text-text-muted">
@@ -41,7 +45,7 @@ export default function CaseStudiesPage() {
               <p className="mt-3 leading-relaxed text-text-muted">
                 {study.summary}
               </p>
-              <span className="mt-4 inline-block text-sm font-medium text-navy">
+              <span className="mt-4 inline-block text-sm font-medium text-navy underline underline-offset-4 transition-colors hover:text-navy-light">
                 Read full case study &rarr;
               </span>
             </Link>

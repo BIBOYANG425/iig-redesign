@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Clients — IIG",
+  title: "Clients",
 };
 
-const clients = ["LASIF", "PS Science", "Client 3", "Client 4"];
+const clients = ["LASIF", "PS Science"];
 
 export default function ClientsPage() {
   return (
@@ -21,6 +22,9 @@ export default function ClientsPage() {
 
       {/* About Our Clients */}
       <section className="bg-cream">
+        <div className="mx-auto max-w-3xl px-6 pt-6 lg:px-8">
+          <Breadcrumbs items={[{ label: "Clients" }]} />
+        </div>
         <div className="mx-auto max-w-3xl px-6 py-24 text-center lg:px-8">
           <p className="leading-relaxed text-text-muted">
             IIG partners with social enterprises, nonprofits, and impact funds
@@ -36,11 +40,11 @@ export default function ClientsPage() {
       {/* Client Logo Grid */}
       <section className="bg-off-white">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {clients.map((name) => (
               <div
                 key={name}
-                className="flex aspect-video items-center justify-center rounded-xl bg-navy/5"
+                className="flex aspect-video items-center justify-center bg-navy/5"
               >
                 <p className="text-sm font-medium text-text-muted">{name}</p>
               </div>
@@ -67,7 +71,7 @@ export default function ClientsPage() {
         <div className="mx-auto max-w-7xl px-6 py-24 text-center lg:px-8">
           <Link
             href="/contact"
-            className="inline-block rounded-full bg-green px-8 py-3.5 text-base font-semibold text-navy transition-colors hover:bg-green-dark"
+            className="inline-block border border-green bg-transparent px-8 py-3.5 text-base font-semibold text-green transition-colors hover:bg-green hover:text-navy"
           >
             Work with us
           </Link>

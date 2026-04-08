@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { eboard, analysts, type TeamMember } from "@/data/team";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Team — IIG",
+  title: "Team",
 };
 
 function MemberCard({ member, compact = false }: { member: TeamMember; compact?: boolean }) {
@@ -12,7 +13,7 @@ function MemberCard({ member, compact = false }: { member: TeamMember; compact?:
     <div className="flex flex-col items-center text-center">
       {/* Headshot placeholder */}
       <div
-        className={`${size} rounded-full bg-navy/10 flex items-center justify-center`}
+        className={`${size} bg-navy/10 flex items-center justify-center`}
       >
         <span className="text-xs text-text-muted">Photo</span>
       </div>
@@ -55,6 +56,9 @@ export default function TeamPage() {
 
       {/* Executive Board */}
       <section className="bg-cream">
+        <div className="mx-auto max-w-7xl px-6 pt-6 lg:px-8">
+          <Breadcrumbs items={[{ label: "About", href: "/about" }, { label: "Team" }]} />
+        </div>
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
           <h2 className="text-center font-serif text-4xl font-semibold text-navy md:text-5xl">
             Executive Board

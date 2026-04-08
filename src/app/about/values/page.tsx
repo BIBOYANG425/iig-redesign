@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Values — IIG",
+  title: "Values",
 };
 
 const values = [
@@ -53,6 +54,9 @@ export default function ValuesPage() {
 
       {/* Values Manifesto */}
       <section className="bg-cream">
+        <div className="mx-auto max-w-3xl px-6 pt-6 lg:px-8">
+          <Breadcrumbs items={[{ label: "About", href: "/about" }, { label: "Values" }]} />
+        </div>
         <div className="mx-auto max-w-3xl space-y-20 px-6 py-24 text-center lg:px-8">
           {values.map((value) => (
             <div key={value.statement}>
