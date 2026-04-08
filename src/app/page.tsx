@@ -21,17 +21,23 @@ export default function Home() {
       <HeroPremium />
 
       {/* Social Proof — dark navy, counter animation */}
-      <SocialProof />
+      <div className="relative z-[2]">
+        <SocialProof />
+      </div>
 
       {/* Services — dark navy, parallax stagger */}
-      <ServicesSection />
+      <div className="relative z-[2]">
+        <ServicesSection />
+      </div>
 
       {/* Impact Palooza — dark navy, pinned scaling */}
-      <ImpactPaloozaMarquee />
+      <div className="relative z-[2]">
+        <ImpactPaloozaMarquee />
+      </div>
 
       {/* Recent Case Studies — transitional gradient */}
       <section
-        className="relative"
+        className="relative z-[2]"
         style={{
           background: "linear-gradient(to bottom, #16165F 0%, #1E1E7A 60%, #2A2A6E 100%)",
         }}
@@ -48,7 +54,9 @@ export default function Home() {
       </section>
 
       {/* Recruitment + Newsletter — cream, soft motion */}
-      <RecruitmentSection />
+      <div className="relative z-[2]">
+        <RecruitmentSection />
+      </div>
     </>
   );
 }

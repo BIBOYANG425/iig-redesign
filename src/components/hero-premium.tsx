@@ -16,15 +16,15 @@ export default function HeroPremium() {
     offset: ["start start", "end end"],
   });
 
-  // Each phrase: fade in and slide up within its scroll range
-  const phrase1Opacity = useTransform(scrollYProgress, [0, 0.08, 0.15], [0, 1, 1]);
-  const phrase1Y = useTransform(scrollYProgress, [0, 0.08], [40, 0]);
+  // Phrases reveal sequentially — spaced across first 40% of scroll
+  const phrase1Opacity = useTransform(scrollYProgress, [0.02, 0.1], [0, 1]);
+  const phrase1Y = useTransform(scrollYProgress, [0.02, 0.1], [40, 0]);
 
-  const phrase2Opacity = useTransform(scrollYProgress, [0.12, 0.2, 0.3], [0, 1, 1]);
-  const phrase2Y = useTransform(scrollYProgress, [0.12, 0.2], [40, 0]);
+  const phrase2Opacity = useTransform(scrollYProgress, [0.1, 0.2], [0, 1]);
+  const phrase2Y = useTransform(scrollYProgress, [0.1, 0.2], [40, 0]);
 
-  const phrase3Opacity = useTransform(scrollYProgress, [0.25, 0.33, 0.45], [0, 1, 1]);
-  const phrase3Y = useTransform(scrollYProgress, [0.25, 0.33], [40, 0]);
+  const phrase3Opacity = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
+  const phrase3Y = useTransform(scrollYProgress, [0.2, 0.3], [40, 0]);
 
   const phraseAnims = [
     { opacity: phrase1Opacity, y: phrase1Y },
@@ -32,13 +32,13 @@ export default function HeroPremium() {
     { opacity: phrase3Opacity, y: phrase3Y },
   ];
 
-  // Subtitle + CTAs appear after all phrases
-  const subtitleOpacity = useTransform(scrollYProgress, [0.45, 0.55], [0, 1]);
-  const subtitleY = useTransform(scrollYProgress, [0.45, 0.55], [30, 0]);
+  // Subtitle + CTAs appear after all phrases are fully visible
+  const subtitleOpacity = useTransform(scrollYProgress, [0.35, 0.45], [0, 1]);
+  const subtitleY = useTransform(scrollYProgress, [0.35, 0.45], [30, 0]);
 
-  // Everything fades out as you leave the hero
-  const exitOpacity = useTransform(scrollYProgress, [0.7, 0.9], [1, 0]);
-  const exitY = useTransform(scrollYProgress, [0.7, 0.9], [0, -60]);
+  // Exit — only starts well after everything is visible (0.45 done → 0.85 start exit)
+  const exitOpacity = useTransform(scrollYProgress, [0.85, 0.98], [1, 0]);
+  const exitY = useTransform(scrollYProgress, [0.85, 0.98], [0, -60]);
 
   // Grain opacity shifts with scroll
   const grainOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 1, 0.3]);
@@ -73,7 +73,7 @@ export default function HeroPremium() {
   }
 
   return (
-    <section ref={sectionRef} className="bg-navy" style={{ height: "300vh" }}>
+    <section ref={sectionRef} style={{ height: "300vh" }}>
       {/* Sticky inner — pins at top for scroll duration */}
       <div className="hero-premium" style={{ position: "sticky", top: 0, height: "100vh" }}>
         <motion.div className="hero-premium__bg" style={{ opacity: grainOpacity }}>

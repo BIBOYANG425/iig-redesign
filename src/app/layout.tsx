@@ -48,7 +48,7 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#16165F" />
       </head>
-      <body className="bg-cream font-sans text-text antialiased">
+      <body className="bg-navy font-sans text-text antialiased">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-navy focus:px-4 focus:py-2 focus:text-cream"

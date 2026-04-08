@@ -196,7 +196,7 @@ export default function CobeGlobe() {
       phi: 0,
       theta: 0.15,
       dark: 1,
-      diffuse: 0.4,
+      diffuse: 1.0,
       mapSamples: 40000,
       mapBrightness: 8,
       mapBaseBrightness: 0.005,
@@ -229,7 +229,7 @@ export default function CobeGlobe() {
         if (Math.abs(velocityRef.current) < 0.0001) {
           velocityRef.current = 0;
           if (!prefersReducedMotion) {
-            phiRef.current += 0.003;
+            phiRef.current += 0.0015;
           }
         }
       }
@@ -306,9 +306,9 @@ export default function CobeGlobe() {
         aspectRatio: "1/1",
         position: "relative",
         WebkitMaskImage:
-          "radial-gradient(circle at center, black 60%, transparent 100%)",
+          "radial-gradient(circle at center, black 70%, transparent 100%)",
         maskImage:
-          "radial-gradient(circle at center, black 60%, transparent 100%)",
+          "radial-gradient(circle at center, black 70%, transparent 100%)",
       }}
     >
       <canvas
